@@ -26,6 +26,8 @@ In your ESLint configuration, add detect-incorrect-imports to the plugins sectio
          { "aliases":
           { /* Add your aliases here */ 
           "alias" : "pattern to replace",
+          "alias" : ["patterns to replace"],
+
           } 
           } 
     ]
@@ -51,9 +53,10 @@ Suppose you have the following configuration:
       ['error', {
           aliases: {
               '@src': '../src/',
-              '@components': '../src/components/',
+              '@components': ['../src/components/', '../components/'],
           // Add more aliases and patterns as needed
           // IE: 'alias' : 'pattern'
+          // IE: 'alias' : ['pattern1', 'pattern2' ...]
           },
       }],
 }
